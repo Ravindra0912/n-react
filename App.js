@@ -1,17 +1,30 @@
-import React from 'react';
-import  ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div",{id:"parent"},[
-    React.createElement("div",{id:"child"},[
-        React.createElement("h1",{},"this is n React"),
-        React.createElement("h2",{},"I am h2 tag"),
-    ]),
-    React.createElement("div",{id:"child2"},[
-        React.createElement("h1",{},"I am h1 tag"),
-        React.createElement("h2",{},"I am h2 tag"),
-    ]),
-])
+// const Title = () =>(
+//   <h1 className="head" tabIndex="5">
+//     Namaste React Using jsx
+//   </h1>
+// );
+const elem = <span>React Element</span>
 
+const title = (
+    <h1 className="head" tabIndex="5">
+      {elem}
+      Namaste React Using jsx !!!
+    </h1>
+  );
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+// React functional Component ->  JS function which return JSX or React ELement is called Functinal component
+
+const HeadingComponent = () => {
+  return (
+    <div id="container">
+      {title}
+      <h1 className="heading ">N React Functional Component</h1>
+    </div>
+  );
+};
+
+root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent />);
